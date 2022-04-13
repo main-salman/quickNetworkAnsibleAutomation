@@ -2,7 +2,7 @@
 
 So, in the last couple of years (between 2020-2022), Ansible has changed significantly, with the introduction of [Collections](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html), and a number of older commands either already deprecated or slated to be deprecated. 
 
-Some core Ansible files such as hosts.ini are also to be deprecated and replaced with YAML equivalent instead (i.e. hosts.yaml - or whatever else you want to name it). Further, Ansible is also encouraging administrators to use "connection = network_cli" for network automation instead of "connection = local" that the network geeks were using prior to 2020, and a number of other changes.
+Some core Ansible files such as hosts.ini are also to be deprecated and replaced with YAML equivalent instead (i.e. hosts.yaml - or whatever else you want to name it). Further, Ansible is also [encouraging administrators](https://docs.ansible.com/ansible/latest/collections/cisco/ios/ios_command_module.html) to use "connection = network_cli" for network automation instead of "connection = local" that the network geeks were using prior to 2020, and a number of other changes.
 
 All of this has resulted in playbooks that look significantly different than before. All of this is a GOOD change - this will make Ansible scale better and ultimately be an even more awesome tool - but it is also a bit of a hassle to update playbooks.
 
