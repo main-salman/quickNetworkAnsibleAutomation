@@ -1,0 +1,51 @@
+---
+## Playbook to show arp entries for specified IPs across 
+#all NX-OS hosts in the hosts.yml file
+# usage: ansible-playbook find.yml -i hosts.yml -e "my_ip=100.113"
+
+
+- hosts: IOS
+  gather_facts: false
+  connection: network_cli
+  become: yes
+
+  tasks:
+   - name: find ARP entries on IOS
+     cli_command:
+       #command: "show ip arp | in {{find}}"
+       #command: "show version | in Version"
+       command: "{{ item }}"
+     loop:
+       - "show version | in Version"
+       - "show ip arp | in {{find}}"
+       #- "conf t"
+       #- "int e0/0"
+       #- "description This is an automated description on {{inventory_hostname}}"
+       #- "end"
+     register: result
+
+   #- name: "TASK 2: Debug command output"
+   #- debug: 
+       #var: result
+   - debug:
+       msg:
+         - "{{ result.results[0].stdout_lines }}"
+         - "{{ result.results[1].stdout_lines }}"
+         #- "{{ result.results[2].stdout_lines }}"
+         #- "{{ result.results[3].stdout_lines }}"
+   
+   
+
+#- hosts: ACI
+  #gather_facts: false
+  #connection: network_cli
+  #become: yes
+
+  #tasks:
+   #- name: find Endpoints on ACI
+     #cli_command:
+       #command: "show endpoint | grep {{ip}}"
+       #command: "show version"
+     #register: arp 
+   #- debug: var=arp.stdout_lines
+
