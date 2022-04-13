@@ -1,4 +1,4 @@
-# quickNetworkAnsibleAutomation
+# Quick and Dirty Network Ansible Automation
 
 So, in the last couple of years (between 2020-2022), Ansible has changed significantly, with the introduction of [Collections](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html), and a number of older commands either already deprecated or slated to be deprecated. 
 
