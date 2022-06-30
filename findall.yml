@@ -44,7 +44,7 @@
   #tasks:
    #- name: find Endpoints on ACI
      #cli_command:
-       #command: "show endpoint | grep {{ip}}"
+       #command: "show endpoint | grep {{find}}"
        #command: "show version"
      #register: arp 
    #- debug: var=arp.stdout_lines
